@@ -46,13 +46,13 @@ if [ ! -e ~/taiga-back ]; then
     workon taiga
 
     pip install -r requirements.txt
-    python manage.py migrate --noinput
-    python manage.py compilemessages
-    python manage.py collectstatic --noinput
-    python manage.py loaddata initial_user
-    python manage.py loaddata initial_project_templates
-    python manage.py sample_data
-    python manage.py rebuild_timeline --purge
+    python3 manage.py migrate --noinput
+    python3 manage.py compilemessages
+    python3 manage.py collectstatic --noinput
+    python3 manage.py loaddata initial_user
+    python3 manage.py loaddata initial_project_templates
+    python3 manage.py sample_data
+    python3 manage.py rebuild_timeline --purge
 
     deactivate
     popd
@@ -64,9 +64,9 @@ else
 
     workon taiga
     pip install -r requirements.txt
-    python manage.py migrate --noinput
-    python manage.py compilemessages
-    python manage.py collectstatic --noinput
+    python3 manage.py migrate --noinput
+    python3 manage.py compilemessages
+    python3 manage.py collectstatic --noinput
     sudo service circus restart
     popd
 fi
